@@ -1,3 +1,6 @@
+using LibraryApi.Data;
+using LibraryApi.Repository;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +11,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IBooksService, BooksService>();
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+builder.Services.AddDbContext<LibraryDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
