@@ -35,6 +35,13 @@ namespace LibraryApi.Controllers
             }
             return Ok(book);
         }
+
+        [HttpGet("author/{authorId}")]
+        public ActionResult<IEnumerable<Book>> GetBooksByAuthor(int authorId)
+        {
+            return Ok(_booksService.GetBooksByAuthor(authorId).ToList());
+        }
+
         
         [HttpPost]
         public ActionResult<Book> CreateBook(Book newBook)

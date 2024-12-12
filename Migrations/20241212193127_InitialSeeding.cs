@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace LibraryApi.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialSeeding : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,6 +66,39 @@ namespace LibraryApi.Migrations
                         principalTable: "Books",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Authors",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "George Orwell" },
+                    { 2, "Harper Lee" },
+                    { 3, "Aldous Huxley" },
+                    { 4, "J.K. Rowling" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Books",
+                columns: new[] { "Id", "AuthorId", "Title", "Year" },
+                values: new object[,]
+                {
+                    { 1, 1, "1984", 1949 },
+                    { 2, 1, "Animal Farm", 1945 },
+                    { 3, 2, "To Kill a Mockingbird", 1960 },
+                    { 4, 3, "Brave New World", 1932 },
+                    { 5, 4, "Harry Potter and the Philosopher's Stone", 1997 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Loans",
+                columns: new[] { "Id", "BookId", "LoanDate", "ReturnDate" },
+                values: new object[,]
+                {
+                    { 1, 1, new DateTime(2024, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null },
+                    { 2, 2, new DateTime(2024, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(2024, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, 4, new DateTime(2024, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), null }
                 });
 
             migrationBuilder.CreateIndex(

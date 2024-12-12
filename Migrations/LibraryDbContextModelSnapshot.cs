@@ -30,6 +30,28 @@ namespace LibraryApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "George Orwell"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Harper Lee"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Aldous Huxley"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "J.K. Rowling"
+                        });
                 });
 
             modelBuilder.Entity("LibraryApi.Models.Book", b =>
@@ -54,6 +76,43 @@ namespace LibraryApi.Migrations
                     b.HasIndex("AuthorId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorId = 1,
+                            Title = "1984",
+                            Year = 1949
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AuthorId = 1,
+                            Title = "Animal Farm",
+                            Year = 1945
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AuthorId = 2,
+                            Title = "To Kill a Mockingbird",
+                            Year = 1960
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AuthorId = 3,
+                            Title = "Brave New World",
+                            Year = 1932
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AuthorId = 4,
+                            Title = "Harry Potter and the Philosopher's Stone",
+                            Year = 1997
+                        });
                 });
 
             modelBuilder.Entity("LibraryApi.Models.Loan", b =>
@@ -76,6 +135,27 @@ namespace LibraryApi.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("Loans");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BookId = 1,
+                            LoanDate = new DateTime(2024, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BookId = 2,
+                            LoanDate = new DateTime(2024, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReturnDate = new DateTime(2024, 12, 12, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BookId = 4,
+                            LoanDate = new DateTime(2024, 12, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("LibraryApi.Models.Book", b =>

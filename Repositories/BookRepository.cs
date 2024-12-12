@@ -33,6 +33,9 @@ namespace LibraryApi.Repository
                     .Include(b => b.Author)
                     .Include(b => b.Loans);
 
+        public IQueryable<Book> GetBooksByAuthor(int id) => _context.Books
+                            .Where(b => b.Author.Id == id)
+                            .Include(b => b.Author);
 
         public Book GetBookById(int id) => _context.Books
                     .Include(b => b.Author)

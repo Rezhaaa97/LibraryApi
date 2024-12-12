@@ -13,6 +13,9 @@ public class BooksService : IBooksService
     }
     public IEnumerable<Book> GetBooks() => _bookRepository.GetAllBooks().ToList();
 
+    public IEnumerable<Book> GetBooksByAuthor(int id) => _bookRepository.GetBooksByAuthor(id);
+
+
     public Book? GetBookById(int id) => _bookRepository.GetBookById(id);
 
     public void AddBook(Book book)
