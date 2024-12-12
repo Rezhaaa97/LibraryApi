@@ -51,6 +51,21 @@ namespace LibraryApi.Migrations
                         {
                             Id = 4,
                             Name = "J.K. Rowling"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Ronny"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Daniel"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Linda"
                         });
                 });
 

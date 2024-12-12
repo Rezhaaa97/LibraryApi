@@ -76,7 +76,10 @@ namespace LibraryApi.Migrations
                     { 1, "George Orwell" },
                     { 2, "Harper Lee" },
                     { 3, "Aldous Huxley" },
-                    { 4, "J.K. Rowling" }
+                    { 4, "J.K. Rowling" },
+                    { 5, "Ronny" },
+                    { 6, "Daniel" },
+                    { 7, "Linda" }
                 });
 
             migrationBuilder.InsertData(

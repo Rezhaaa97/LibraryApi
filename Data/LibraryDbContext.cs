@@ -36,7 +36,10 @@ namespace LibraryApi.Data
                 new Author { Id = 1, Name = "George Orwell" },
                 new Author { Id = 2, Name = "Harper Lee" },
                 new Author { Id = 3, Name = "Aldous Huxley" },
-                new Author { Id = 4, Name = "J.K. Rowling" }
+                new Author { Id = 4, Name = "J.K. Rowling" },
+                new Author { Id = 5, Name = "Ronny" },
+                new Author { Id = 6, Name = "Daniel" },
+                new Author { Id = 7, Name = "Linda" }
             );
 
             // Seed Books

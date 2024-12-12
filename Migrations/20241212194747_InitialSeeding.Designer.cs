@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryApi.Migrations
 {
     [DbContext(typeof(LibraryDbContext))]
-    [Migration("20241212193127_InitialSeeding")]
+    [Migration("20241212194747_InitialSeeding")]
     partial class InitialSeeding
     {
         /// <inheritdoc />
@@ -54,6 +54,21 @@ namespace LibraryApi.Migrations
                         {
                             Id = 4,
                             Name = "J.K. Rowling"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Ronny"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Daniel"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Linda"
                         });
                 });
 
