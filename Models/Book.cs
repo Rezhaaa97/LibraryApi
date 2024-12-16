@@ -21,6 +21,7 @@ namespace LibraryApi.Models
         [ValidateNever]
         public Author Author { get; set; }
         [ValidateNever]
+        [JsonIgnore]
         public ICollection<Loan> Loans { get; set; }
     }
 }
