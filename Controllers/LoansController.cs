@@ -7,6 +7,7 @@ namespace LibraryApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class LoansController : ControllerBase
     {
         private readonly LoanService _loanService;
